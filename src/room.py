@@ -9,4 +9,13 @@ class Room:
 
 
 def __str__(self):
-    return f'Name: {self.name}, Description: {self.description}'
+    output = ""
+    output += f'Room: {self.name} \n'
+    output += f'{self.description} \n\n'
+    output += 'Items: \n'
+
+    for index, item in enumerate(self.items):
+        output += str(index+1) + '. ' + str(item.name) + \
+            ' - ' + str(item.description) + '\n'
+
+    return output
